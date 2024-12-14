@@ -82,8 +82,29 @@ p.lead {
   .order-section .btn {
     font-size: 1.2rem;
   }
-  
 
+
+  /* gallery */
+
+  .carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .carousel-item img {
+      height: 250px;
+    }
+  }
+  
 /* Footer */
 footer {
     background-color: #212121;
