@@ -1,121 +1,256 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
 }
+
 /*Navigation */
 
 
 
 /* Main Content */
 
-main{
-    background-color: #ffa405;
-    padding: 20px;
-    height: 100%;
-    width: 100%;
-    font-family: sans-serif;
-    text-align: center;
+main {
+  background-color: #ffa405;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 
 
 
 section {
-    padding: 15px;
-    margin: 20px;
+  padding: 15px;
+  margin: 20px;
 }
 
 /* welcome */
 /* Welcome Quote Styling */
 .container {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
+
 .container:hover {
-    background: #f8f9face;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    border: 0.5px solid black;
+  background: #f8f9face;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border: 0.5px solid black;
 }
 
 
 h2 {
-    color: #212529;
-    font-weight: bold;
+  color: #212529;
+  font-weight: bold;
 }
 
 p.lead {
-    font-style: italic;
-    color: #555;
-    font-weight: bold;
+  font-style: italic;
+  color: #555;
+  font-weight: bold;
 }
+
+/* Menu  */
+/* General Container Styling */
+#menu {
+  /* background-color: #f8f9fa; */
+  padding: 50px 0;
+}
+
+#menu h2 {
+  font-weight: bold;
+  color: #333;
+}
+
+#menu p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Menu Grid Section */
+#menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Each Menu Category */
+#menu .col-md-4 {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 15px;
+}
+
+/* Hover Effects for Each Category */
+#menu .col-md-4:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Colors for Each Category */
+.text-primary {
+  color: #007bff !important;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+.text-info {
+  color: #17a2b8 !important;
+}
+
+/* Menu List Items */
+#menu .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+#menu .list-unstyled li {
+  font-weight: 500;
+  font-size: 18px;
+  color: #555;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect on Menu Items */
+#menu .list-unstyled li:hover {
+  color: #007bff;
+}
+
+/* Add a subtle transition effect */
+#menu .list-unstyled li::before {
+  content: "• ";
+  color: #007bff;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Media Query for Better Responsiveness */
+@media (max-width: 768px) {
+  #menu .col-md-4 {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+
+
+
 
 
 /* Order now section */
 .order-section {
-    padding: 40px 20px;
-    /* text-align: center; */
-    background-color: #f8f9fa;
-    /* background-color: #f6ea81; */
-    border-top: 2px solid #ddd;
-    border-radius: 5px;
-    /* width: fit-content; */
-    /* margin-left: 23%; */
+  padding: 40px 20px;
+  /* text-align: center; */
+  background-color: #f8f9fa;
+  /* background-color: #f6ea81; */
+  border-top: 2px solid #ddd;
+  border-radius: 5px;
+  /* width: fit-content; */
+  /* margin-left: 23%; */
 
-  }
-  
-  .order-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .order-section p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .order-section .btn {
-    font-size: 1.2rem;
-  }
+}
 
+.order-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
 
-  /* gallery */
-    .carousel-item img {
+.order-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.order-section .btn {
+  font-size: 1.2rem;
+}
+
+/* gallery */
+
+.carousel-item img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    height: 300px;
+  }
+}
+
+/* Contact  */
+
+#contact .btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#contact .btn:hover {
+  transform: scale(1.05);
+}
+
+#contact .desktop-btn {
+  width: 220px;
+  /* Set a fixed width for buttons */
+  padding: 15px 20px;
+  /* Adjust padding for better proportions */
+  transition: all 0.3s ease-in-out;
+}
+
+#contact .desktop-btn:hover {
+  transform: scale(1.05);
+  /* Slight zoom effect on hover */
+}
+
+@media (max-width: 768px) {
+  #contact .btn {
+    font-size: 14px;
+    /* Slightly smaller font for mobile */
+    padding: 8px 12px;
+    /* Adjust padding for better fit */
     width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 10px;
+    /* Stack buttons vertically */
   }
 
-  @media (max-width: 768px) {
-    .carousel-item img {
-      height: 400px;
-    }
+  #contact .desktop-btn {
+    width: 100%;
+    /* Full width for smaller screens */
+    font-size: 14px;
+    padding: 10px 15px;
   }
+}
 
-  @media (max-width: 576px) {
-    .carousel-item img {
-      height: 300px;
-    }
-  }
-  
+
 /* Footer */
-/*footer {
-    background-color: #212121;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-}*/
-
 footer {
   background-color: #212121;
   color: #fff;
@@ -124,16 +259,20 @@ footer {
   bottom: 0;
   width: 100%;
   height: 50px;
-  opacity: 0.5; /* Start with transparency */
-  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  opacity: 0.5;
+  /* Start with transparency */
+  transition: opacity 0.5s ease;
+  /* Smooth transition for opacity */
 }
 
 /* Back to Top Button */
 #backToTopBtn {
   position: fixed;
-  bottom: 80px; /* Place it above the footer */
+  bottom: 80px;
+  /* Place it above the footer */
   right: 20px;
-  display: none; /* Initially hidden */
+  display: none;
+  /* Initially hidden */
   z-index: 1000;
   border-radius: 50%;
   padding: 10px 15px;
@@ -142,7 +281,8 @@ footer {
 /* Bottom Message */
 #bottomMessage {
   position: fixed;
-  bottom: 40px; /* Above the back-to-top button */
+  bottom: 40px;
+  /* Above the back-to-top button */
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
