@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+  
 //   footer and bitton for back to top 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -100,4 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-  
+  // Menu 
+
+  // Function to simulate the typing effect
