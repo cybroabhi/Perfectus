@@ -166,6 +166,10 @@ const menuData = [
   },
 ];
 
+
+// here menu is ended 
+
+
 // Function to dynamically populate the menu
 function populateMenu() {
   const menuGrid = document.getElementById("menu-grid");
@@ -358,20 +362,24 @@ function placeOrder() {
     return;
   }
 
-  // Prepare the order details
+  // Prepare the order details with numbering and line breaks
   const orderDetails = cart
     .map(
-      (item) => `${item.name} (x${item.count}) - ₹${item.price * item.count}`
+      (item, index) => `${index + 1}. ${item.name} (x${item.count}) - ₹${item.price * item.count}`
     )
-    .join(", ");
+    .join("\n");
+
   const totalAmount = cart.reduce(
     (sum, item) => sum + item.price * item.count,
     0
   );
 
-  // Prepare the final message to send via WhatsApp
+  // Add the custom message at the beginning
   const message = encodeURIComponent(`
-        Order Details: ${orderDetails}
+        Here is my order details:-
+        
+        ${orderDetails}
+
         Total: ₹${totalAmount}
         
         Receiver's Name: ${receiverName}
@@ -395,6 +403,7 @@ function placeOrder() {
   );
   myModal.hide(); // Hide the modal after the order is placed
 }
+
 
 // Scroll to My Cart Section
 document.getElementById("myCartBtn").addEventListener("click", function (e) {
