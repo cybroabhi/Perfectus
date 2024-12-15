@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 /*Navigation */
@@ -16,6 +16,7 @@ main {
   width: 100%;
   font-family: sans-serif;
   text-align: center;
+  /* background-image: url(240_F_1066053188_qJzLFH5MAex9UauCwthemWL2Lg8gwfE5.jpg); */
 }
 
 section {
@@ -27,13 +28,16 @@ section {
 /* Welcome Quote Styling */
 .container {
   background: #f8f9fa;
+  /* background-color: #ffa405; */
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .container:hover {
-  background: #f8f9face;
+  /* background: #f8f9face; */
+  background-color: #ffa305e3;
+
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -50,13 +54,45 @@ p.lead {
   color: #555;
   font-weight: bold;
 }
+/* Dynamic fixed Block  */
+.fixed-effect {
+  display: inline-block;
+  max-width: 300px;
+  height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  color: #ff5722;
+  line-height: 1.5em;
+  /* border: 2px solid black; */
+}
+
+/* Welcome Dynamic Effect section starts */
+#dynamic-text {
+  font-weight: bold;
+  color: #ff5722;
+}
+
+/* Menu Dynamic Effect  */
+#dynamic-menu-text {
+  font-weight: bold;
+  color: #ff5722;
+}
+
+
 
 /* Menu  */
 /* General Container Styling */
 #menu {
-  /* background-color: #f8f9fa; */
+  background-color: #e5d5be;
+  /* background-color: #f9f3e5; */
+
   padding: 50px 0;
+  width: 100%;
+  border-radius: 15px;
 }
+
 
 #menu h2 {
   font-weight: bold;
@@ -78,6 +114,8 @@ p.lead {
 /* Each Menu Category */
 #menu .col-md-4 {
   background: #fff;
+  /* background-color: #f2a625; */
+
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -312,3 +350,41 @@ footer {
 .my-4 {
   margin: 1.5rem 0;
 }
+
+/* About us  */
+/* Optional: For visual clarity */
+#about-us {
+  background-color: #f9f3e5;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+h2, h3 {
+  color: #444;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+#contact {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 5px;
+
+}
+
+a.text-primary {
+  font-weight: bold;
+}
+
+
+
+/* ********************* */
+/* #home{
+background-image: url(240_F_1066053188_qJzLFH5MAex9UauCwthemWL2Lg8gwfE5.jpg);
+width: 100%;
+
+} */
