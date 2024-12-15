@@ -105,6 +105,257 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Welcome Section Dynamic effect typing starts
+// Array of phrases to simulate dynamic typing effect
+const phrases = [
+  "Savor the taste of perfection 🍽️",
+  "Every bite is a delightful experience ✨",
+  "Passion & Taste in Every Dish 😋",
+  "Creating Memories One Meal at a Time 💭"
+];
+
+let index = 0;
+let charIndex = 0;
+const speed = 100;  // Typing speed (in milliseconds)
+const element = document.getElementById("dynamic-text");
+
+// Function to simulate the typing effect
+function typeEffect() {
+  if (charIndex < phrases[index].length) {
+    element.textContent += phrases[index].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, speed);
+  } else {
+    setTimeout(eraseEffect, 2000);  // Pause for 2 seconds before erasing
+  }
+}
+
+// Function to simulate deleting the text
+function eraseEffect() {
+  if (charIndex > 0) {
+    element.textContent = phrases[index].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseEffect, speed);
+  } else {
+    index = (index + 1) % phrases.length;  // Loop through the phrases
+    setTimeout(typeEffect, speed);
+  }
+}
+
+// Start the typing effect on page load
+document.addEventListener("DOMContentLoaded", typeEffect);
+// Welcome Section Dynamic effect typing Ends above
+
+
+// Menu Dynamic Effcect 
+// Menu categories to simulate dynamic typing effect
+const menuCategories = [
+  "Burgers 🍔",
+  "Rice Specials 🍚",
+  "Soups & Noodles 🍜",
+  "Wraps & Rolls 🌯",
+  "BBQ & Grills 🔥",
+  "Combo Deals 🧑‍🤝‍🧑"
+];
+
+let menuIndex = 0;     // Separate index for Menu Highlights
+let menuCharIndex = 0;  // Separate charIndex for Menu Highlights
+const menuSpeed = 100;  // Typing speed (milliseconds)
+const menuElement = document.getElementById("dynamic-menu-text");
+
+// Function to simulate typing effect for Menu Highlights
+function typeMenuEffect() {
+  if (menuCharIndex < menuCategories[menuIndex].length) {
+    menuElement.textContent += menuCategories[menuIndex].charAt(menuCharIndex);
+    menuCharIndex++;
+    setTimeout(typeMenuEffect, menuSpeed);
+  } else {
+    setTimeout(eraseMenuEffect, 2000);  // Pause for 2 seconds before erasing
+  }
+}
+
+// Function to simulate deleting the text in Menu Highlights
+function eraseMenuEffect() {
+  if (menuCharIndex > 0) {
+    menuElement.textContent = menuCategories[menuIndex].substring(0, menuCharIndex - 1);
+    menuCharIndex--;
+    setTimeout(eraseMenuEffect, menuSpeed);
+  } else {
+    menuIndex = (menuIndex + 1) % menuCategories.length;
+    setTimeout(typeMenuEffect, menuSpeed);
+  }
+}
+
+// Start the dynamic typing effect for the menu section
+document.addEventListener("DOMContentLoaded", typeMenuEffect);
+
+// Menu categories to simulate dynamic typing effect ends
+
+// Order Now Dynamic Effects Typing
+
+// Array of order highlights to simulate dynamic typing effect
+const orderPhrases = [
+  "Freshly Prepared Meals 🍲",
+  "Fast & Reliable Delivery 🚀",
+  "Tasty Combos Await You 🧑‍🤝‍🧑",
+  "Quality Ingredients 🥦",
+  "Affordable Prices 💰"
+];
+
+let orderIndex = 0;     // Separate index for Order Highlights
+let orderCharIndex = 0;  // Separate charIndex for Order Highlights
+const orderSpeed = 100;  // Typing speed (milliseconds)
+const orderElement = document.getElementById("dynamic-order-text");
+
+// Function to simulate typing effect for the Order section
+function typeOrderEffect() {
+  if (orderCharIndex < orderPhrases[orderIndex].length) {
+    orderElement.textContent += orderPhrases[orderIndex].charAt(orderCharIndex);
+    orderCharIndex++;
+    setTimeout(typeOrderEffect, orderSpeed);
+  } else {
+    setTimeout(eraseOrderEffect, 2000);  // Pause for 2 seconds before erasing
+  }
+}
+
+// Function to simulate deleting text in the Order section
+function eraseOrderEffect() {
+  if (orderCharIndex > 0) {
+    orderElement.textContent = orderPhrases[orderIndex].substring(0, orderCharIndex - 1);
+    orderCharIndex--;
+    setTimeout(eraseOrderEffect, orderSpeed);
+  } else {
+    orderIndex = (orderIndex + 1) % orderPhrases.length;
+    setTimeout(typeOrderEffect, orderSpeed);
+  }
+}
+
+// Start the dynamic typing effect on page load
+document.addEventListener("DOMContentLoaded", typeOrderEffect);
+
+//Order Now Dyanmic Effects Typing End
+
+
+//Gallery Dyanmic Effects Typing Starts
+// Array of gallery highlights to simulate dynamic typing effect
+const galleryPhrases = [
+  "Cafe Atmosphere ☕",
+  "Exquisite Food Presentation 🍽️",
+  "Elegant Decor 🖼️",
+  "Trendy Interiors 🏠",
+  "Comfortable Seating 🪑"
+];
+
+let galleryIndex = 0;
+let galleryCharIndex = 0;
+const gallerySpeed = 100;
+const galleryElement = document.getElementById("dynamic-gallery-text");
+
+// Function to simulate the typing effect for the gallery section
+function typeGalleryEffect() {
+  if (galleryCharIndex < galleryPhrases[galleryIndex].length) {
+    galleryElement.textContent += galleryPhrases[galleryIndex].charAt(galleryCharIndex);
+    galleryCharIndex++;
+    setTimeout(typeGalleryEffect, gallerySpeed);
+  } else {
+    setTimeout(eraseGalleryEffect, 2000);  // Pause for 2 seconds before erasing
+  }
+}
+
+// Function to simulate erasing the text in the gallery section
+function eraseGalleryEffect() {
+  if (galleryCharIndex > 0) {
+    galleryElement.textContent = galleryPhrases[galleryIndex].substring(0, galleryCharIndex - 1);
+    galleryCharIndex--;
+    setTimeout(eraseGalleryEffect, gallerySpeed);
+  } else {
+    galleryIndex = (galleryIndex + 1) % galleryPhrases.length;
+    setTimeout(typeGalleryEffect, gallerySpeed);
+  }
+}
+
+// Start the dynamic typing effect on page load
+document.addEventListener("DOMContentLoaded", typeGalleryEffect);
+
+//Gallery Dyanmic Effects Typing End
+
+
+//About us Dyanmic Effects Typing Starts
+// Array of key phrases for the About Us dynamic typing effect
+const aboutUsPhrases = [
+  "Authentic Momos 🍜",
+  "Delicious Burgers 🍔",
+  "Quality Ingredients 🥦",
+  "Passionate Chefs 👨‍🍳",
+  "Affordable Combos 💰"
+];
+
+let aboutIndex = 0;
+let aboutCharIndex = 0;
+const aboutSpeed = 100;
+const aboutElement = document.getElementById("dynamic-about-text");
+
+// Function to simulate typing effect for About Us section
+function typeAboutUsEffect() {
+  if (aboutCharIndex < aboutUsPhrases[aboutIndex].length) {
+    aboutElement.textContent += aboutUsPhrases[aboutIndex].charAt(aboutCharIndex);
+    aboutCharIndex++;
+    setTimeout(typeAboutUsEffect, aboutSpeed);
+  } else {
+    setTimeout(eraseAboutUsEffect, 2000);  // Pause for 2 seconds before erasing
+  }
+}
+
+// Function to simulate erasing the text in the About Us section
+function eraseAboutUsEffect() {
+  if (aboutCharIndex > 0) {
+    aboutElement.textContent = aboutUsPhrases[aboutIndex].substring(0, aboutCharIndex - 1);
+    aboutCharIndex--;
+    setTimeout(eraseAboutUsEffect, aboutSpeed);
+  } else {
+    aboutIndex = (aboutIndex + 1) % aboutUsPhrases.length;
+    setTimeout(typeAboutUsEffect, aboutSpeed);
+  }
+}
+
+// Start the dynamic typing effect when the page loads
+document.addEventListener("DOMContentLoaded", typeAboutUsEffect);
+
+
+//About us Dyanmic Effects Typing End
+
+
+//About us Dyanmic Effects Typing End
+
+// Define contact content to reload dynamically
+const contactContent = {
+  address: "Hospital Road, near IRS Path Lab, Pragati Nagar, Bhoop Narayan Singh Colony, Madhubani, Bihar 847211",
+  phone: "+91 7250327478",
+  email: "contact@perfectus.com"
+};
+
+function reloadContactContent() {
+  const contactSection = document.getElementById('contact');
+  const pTags = contactSection.getElementsByTagName('p');
+
+  // Reload <p> content dynamically
+  pTags[0].innerHTML = `<strong>Address:</strong> ${contactContent.address}`;
+  pTags[1].innerHTML = `<strong>Phone:</strong> <a href="tel:+917250327478" class="text-decoration-none text-primary">${contactContent.phone}</a>`;
+  pTags[2].innerHTML = `<strong>Email:</strong> <a href="mailto:${contactContent.email}" class="text-decoration-none text-primary">${contactContent.email}</a>`;
+}
+
+// Detect when user reaches the bottom of the page
+window.addEventListener('scroll', function() {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    console.log('User reached the bottom of the page');
+    reloadContactContent();
+  }
+});
+
+
+//About us Dyanmic Effects Typing End
+
+
 // Menu Data
 
 const menuData = [
