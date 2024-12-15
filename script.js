@@ -106,6 +106,112 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Menu
+// Menu Data
+const menuData = [
+  {
+    category: "🍔 Burgers & Sandwiches",
+    colorClass: "text-primary",
+    items: [
+      { name: "Classic Burger", price: 200 },
+      { name: "Chilli Chicken Burger", price: 250 },
+      { name: "Potato Cheese Burger", price: 180 },
+      { name: "Grilled Sandwich", price: 150 },
+      { name: "Mexican Paneer Sandwich", price: 170 },
+      { name: "Mayo Grilled Sandwich", price: 160 },
+    ],
+  },
+  {
+    category: "🍲 Rice Specials",
+    colorClass: "text-success",
+    items: [
+      { name: "Chicken Fried Rice", price: 220 },
+      { name: "Spicy Paneer Rice", price: 200 },
+      { name: "Aloo Tikki Rice Special", price: 190 },
+    ],
+  },
+  {
+    category: "🍲 Soups & Noodles",
+    colorClass: "text-danger",
+    items: [
+      { name: "Veg Manchow Soup", price: 150 },
+      { name: "Schezwan Chicken Noodles", price: 220 },
+      { name: "Crumbly Cheese Noodles", price: 200 },
+    ],
+  },
+  {
+    category: "🌯 Wraps & Rolls",
+    colorClass: "text-warning",
+    items: [
+      { name: "Veg Cheese Maggi Wrap", price: 180 },
+      { name: "Spicy Paneer Wrap", price: 190 },
+      { name: "Classic Fries and Peri-Peri Fries", price: 150 },
+    ],
+  },
+  {
+    category: "🔥 BBQ & Grills",
+    colorClass: "text-primary",
+    items: [
+      { name: "Spicy Paneer BBQ Deal", price: 300 },
+      { name: "Chicken Leg Combo", price: 350 },
+      { name: "Chicken Breast Specials", price: 400 },
+    ],
+  },
+  {
+    category: "🥤 Combo Deals",
+    colorClass: "text-info",
+    items: [
+      { name: "Budy Box Veg Deal", price: 250 },
+      { name: "Budy Box Chicken Deal", price: 300 },
+    ],
+  },
+];
+
+// Function to dynamically populate the menu
+function populateMenu() {
+  const menuGrid = document.getElementById("menu-grid");
+  menuData.forEach((section) => {
+    // Create category container
+    const categoryDiv = document.createElement("div");
+    categoryDiv.className = "col-md-4 mb-4";
+
+    // Add category title
+    categoryDiv.innerHTML = `
+      <h4 class="${section.colorClass}">${section.category}</h4>
+      <ul class="list-unstyled"></ul>
+    `;
+
+    // Get the ul element for the category
+    const ul = categoryDiv.querySelector("ul");
+
+    // Add menu items
+    section.items.forEach((item) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${item.name}
+        <span id="count-${item.name.replace(/\s+/g, "")}" class="badge bg-primary ms-2">0</span>
+        <button class="btn btn-sm btn-success ms-2" 
+          onclick="addToCart('${item.name}', ${item.price}, 'count-${item.name.replace(/\s+/g, "")}')">
+          <i class="bi bi-plus"></i>
+        </button>
+      `;
+      ul.appendChild(li);
+    });
+
+    // Append category container to the menu grid
+    menuGrid.appendChild(categoryDiv);
+  });
+}
+
+// Call the function to populate the menu on page load
+populateMenu();
+
+// Example Add to Cart Function
+function addToCart(name, price, countId) {
+  const countBadge = document.getElementById(countId);
+  countBadge.textContent = parseInt(countBadge.textContent) + 1;
+  console.log(`Added ${name} to cart for ₹${price}`);
+}
+
 
 // Function to simulate the typing effect
 
@@ -124,13 +230,20 @@ function addToCart(itemName, itemPrice, buttonId) {
     cart.push({ name: itemName, price: itemPrice, count: 1 });
   }
 
-  // Update the count in the menu
-  const countBadge = document.getElementById(buttonId);
-  countBadge.textContent = parseInt(countBadge.textContent) + 1;
 
-  updateCartUI(); // Update the cart view
-  alert(`${itemName} has been added to your cart.`);
-}
+   // Update the count in the menu
+   updateMenuCount(itemName, buttonId);
+
+   updateCartUI(); // Update the cart view
+   alert(`${itemName} has been added to your cart.`);
+ }
+ 
+ // Update Menu Count Function
+ function updateMenuCount(itemName, buttonId) {
+   const cartItem = cart.find((item) => item.name === itemName);
+   const countBadge = document.getElementById(buttonId);
+   countBadge.textContent = cartItem ? cartItem.count : 0;
+ }
 
 // Update Cart UI for Modal and Section
 function updateCartUI() {
@@ -173,14 +286,18 @@ function updateCartUI() {
 
 // Increment Item Count
 function incrementItem(index) {
-  cart[index].count++;
+  const item = cart[index];
+  item.count++;
+  updateMenuCount(item.name, `count-${item.name.replace(/\s/g, "")}`);
   updateCartUI();
 }
 
 // Decrement Item Count
 function decrementItem(index) {
-  if (cart[index].count > 1) {
-    cart[index].count--;
+  const item = cart[index];
+  if (item.count > 1) {
+    item.count--;
+    updateMenuCount(item.name, `count-${item.name.replace(/\s/g, "")}`);
   } else {
     removeFromCart(index);
   }
@@ -189,9 +306,20 @@ function decrementItem(index) {
 
 // Remove Item from Cart
 function removeFromCart(index) {
+  const item = cart[index];
+  
+  // Reset the menu count to 0 for the removed item
+  const buttonId = `count-${item.name.replace(/\s/g, "")}`;
+  const countBadge = document.getElementById(buttonId);
+  if (countBadge) {
+    countBadge.textContent = 0;
+  }
+
+  // Remove the item from the cart
   cart.splice(index, 1);
   updateCartUI();
 }
+
 
 // Function to show the Delivery Details modal
 function showDeliveryModal() {
