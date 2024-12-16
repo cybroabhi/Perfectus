@@ -111,12 +111,12 @@ const phrases = [
   "Savor the taste of perfection 🍽️",
   "Every bite is a delightful experience ✨",
   "Passion & Taste in Every Dish 😋",
-  "Creating Memories One Meal at a Time 💭"
+  "Creating Memories One Meal at a Time 💭",
 ];
 
 let index = 0;
 let charIndex = 0;
-const speed = 100;  // Typing speed (in milliseconds)
+const speed = 100; // Typing speed (in milliseconds)
 const element = document.getElementById("dynamic-text");
 
 // Function to simulate the typing effect
@@ -126,7 +126,7 @@ function typeEffect() {
     charIndex++;
     setTimeout(typeEffect, speed);
   } else {
-    setTimeout(eraseEffect, 2000);  // Pause for 2 seconds before erasing
+    setTimeout(eraseEffect, 2000); // Pause for 2 seconds before erasing
   }
 }
 
@@ -137,7 +137,7 @@ function eraseEffect() {
     charIndex--;
     setTimeout(eraseEffect, speed);
   } else {
-    index = (index + 1) % phrases.length;  // Loop through the phrases
+    index = (index + 1) % phrases.length; // Loop through the phrases
     setTimeout(typeEffect, speed);
   }
 }
@@ -146,8 +146,7 @@ function eraseEffect() {
 document.addEventListener("DOMContentLoaded", typeEffect);
 // Welcome Section Dynamic effect typing Ends above
 
-
-// Menu Dynamic Effcect 
+// Menu Dynamic Effcect
 // Menu categories to simulate dynamic typing effect
 const menuCategories = [
   "Burgers 🍔",
@@ -155,12 +154,12 @@ const menuCategories = [
   "Soups & Noodles 🍜",
   "Wraps & Rolls 🌯",
   "BBQ & Grills 🔥",
-  "Combo Deals 🧑‍🤝‍🧑"
+  "Combo Deals 🧑‍🤝‍🧑",
 ];
 
-let menuIndex = 0;     // Separate index for Menu Highlights
-let menuCharIndex = 0;  // Separate charIndex for Menu Highlights
-const menuSpeed = 100;  // Typing speed (milliseconds)
+let menuIndex = 0; // Separate index for Menu Highlights
+let menuCharIndex = 0; // Separate charIndex for Menu Highlights
+const menuSpeed = 100; // Typing speed (milliseconds)
 const menuElement = document.getElementById("dynamic-menu-text");
 
 // Function to simulate typing effect for Menu Highlights
@@ -170,14 +169,17 @@ function typeMenuEffect() {
     menuCharIndex++;
     setTimeout(typeMenuEffect, menuSpeed);
   } else {
-    setTimeout(eraseMenuEffect, 2000);  // Pause for 2 seconds before erasing
+    setTimeout(eraseMenuEffect, 2000); // Pause for 2 seconds before erasing
   }
 }
 
 // Function to simulate deleting the text in Menu Highlights
 function eraseMenuEffect() {
   if (menuCharIndex > 0) {
-    menuElement.textContent = menuCategories[menuIndex].substring(0, menuCharIndex - 1);
+    menuElement.textContent = menuCategories[menuIndex].substring(
+      0,
+      menuCharIndex - 1
+    );
     menuCharIndex--;
     setTimeout(eraseMenuEffect, menuSpeed);
   } else {
@@ -199,12 +201,12 @@ const orderPhrases = [
   "Fast & Reliable Delivery 🚀",
   "Tasty Combos Await You 🧑‍🤝‍🧑",
   "Quality Ingredients 🥦",
-  "Affordable Prices 💰"
+  "Affordable Prices 💰",
 ];
 
-let orderIndex = 0;     // Separate index for Order Highlights
-let orderCharIndex = 0;  // Separate charIndex for Order Highlights
-const orderSpeed = 100;  // Typing speed (milliseconds)
+let orderIndex = 0; // Separate index for Order Highlights
+let orderCharIndex = 0; // Separate charIndex for Order Highlights
+const orderSpeed = 100; // Typing speed (milliseconds)
 const orderElement = document.getElementById("dynamic-order-text");
 
 // Function to simulate typing effect for the Order section
@@ -214,14 +216,17 @@ function typeOrderEffect() {
     orderCharIndex++;
     setTimeout(typeOrderEffect, orderSpeed);
   } else {
-    setTimeout(eraseOrderEffect, 2000);  // Pause for 2 seconds before erasing
+    setTimeout(eraseOrderEffect, 2000); // Pause for 2 seconds before erasing
   }
 }
 
 // Function to simulate deleting text in the Order section
 function eraseOrderEffect() {
   if (orderCharIndex > 0) {
-    orderElement.textContent = orderPhrases[orderIndex].substring(0, orderCharIndex - 1);
+    orderElement.textContent = orderPhrases[orderIndex].substring(
+      0,
+      orderCharIndex - 1
+    );
     orderCharIndex--;
     setTimeout(eraseOrderEffect, orderSpeed);
   } else {
@@ -235,7 +240,6 @@ document.addEventListener("DOMContentLoaded", typeOrderEffect);
 
 //Order Now Dyanmic Effects Typing End
 
-
 //Gallery Dyanmic Effects Typing Starts
 // Array of gallery highlights to simulate dynamic typing effect
 const galleryPhrases = [
@@ -243,7 +247,7 @@ const galleryPhrases = [
   "Exquisite Food Presentation 🍽️",
   "Elegant Decor 🖼️",
   "Trendy Interiors 🏠",
-  "Comfortable Seating 🪑"
+  "Comfortable Seating 🪑",
 ];
 
 let galleryIndex = 0;
@@ -254,18 +258,22 @@ const galleryElement = document.getElementById("dynamic-gallery-text");
 // Function to simulate the typing effect for the gallery section
 function typeGalleryEffect() {
   if (galleryCharIndex < galleryPhrases[galleryIndex].length) {
-    galleryElement.textContent += galleryPhrases[galleryIndex].charAt(galleryCharIndex);
+    galleryElement.textContent +=
+      galleryPhrases[galleryIndex].charAt(galleryCharIndex);
     galleryCharIndex++;
     setTimeout(typeGalleryEffect, gallerySpeed);
   } else {
-    setTimeout(eraseGalleryEffect, 2000);  // Pause for 2 seconds before erasing
+    setTimeout(eraseGalleryEffect, 2000); // Pause for 2 seconds before erasing
   }
 }
 
 // Function to simulate erasing the text in the gallery section
 function eraseGalleryEffect() {
   if (galleryCharIndex > 0) {
-    galleryElement.textContent = galleryPhrases[galleryIndex].substring(0, galleryCharIndex - 1);
+    galleryElement.textContent = galleryPhrases[galleryIndex].substring(
+      0,
+      galleryCharIndex - 1
+    );
     galleryCharIndex--;
     setTimeout(eraseGalleryEffect, gallerySpeed);
   } else {
@@ -279,7 +287,6 @@ document.addEventListener("DOMContentLoaded", typeGalleryEffect);
 
 //Gallery Dyanmic Effects Typing End
 
-
 //About us Dyanmic Effects Typing Starts
 // Array of key phrases for the About Us dynamic typing effect
 const aboutUsPhrases = [
@@ -287,7 +294,7 @@ const aboutUsPhrases = [
   "Delicious Burgers 🍔",
   "Quality Ingredients 🥦",
   "Passionate Chefs 👨‍🍳",
-  "Affordable Combos 💰"
+  "Affordable Combos 💰",
 ];
 
 let aboutIndex = 0;
@@ -298,18 +305,22 @@ const aboutElement = document.getElementById("dynamic-about-text");
 // Function to simulate typing effect for About Us section
 function typeAboutUsEffect() {
   if (aboutCharIndex < aboutUsPhrases[aboutIndex].length) {
-    aboutElement.textContent += aboutUsPhrases[aboutIndex].charAt(aboutCharIndex);
+    aboutElement.textContent +=
+      aboutUsPhrases[aboutIndex].charAt(aboutCharIndex);
     aboutCharIndex++;
     setTimeout(typeAboutUsEffect, aboutSpeed);
   } else {
-    setTimeout(eraseAboutUsEffect, 2000);  // Pause for 2 seconds before erasing
+    setTimeout(eraseAboutUsEffect, 2000); // Pause for 2 seconds before erasing
   }
 }
 
 // Function to simulate erasing the text in the About Us section
 function eraseAboutUsEffect() {
   if (aboutCharIndex > 0) {
-    aboutElement.textContent = aboutUsPhrases[aboutIndex].substring(0, aboutCharIndex - 1);
+    aboutElement.textContent = aboutUsPhrases[aboutIndex].substring(
+      0,
+      aboutCharIndex - 1
+    );
     aboutCharIndex--;
     setTimeout(eraseAboutUsEffect, aboutSpeed);
   } else {
@@ -321,22 +332,21 @@ function eraseAboutUsEffect() {
 // Start the dynamic typing effect when the page loads
 document.addEventListener("DOMContentLoaded", typeAboutUsEffect);
 
-
 //About us Dyanmic Effects Typing End
 
-
-//About us Dyanmic Effects Typing End
+//Contact us Dyanmic Effects Typing End
 
 // Define contact content to reload dynamically
 const contactContent = {
-  address: "Hospital Road, near IRS Path Lab, Pragati Nagar, Bhoop Narayan Singh Colony, Madhubani, Bihar 847211",
+  address:
+    "Hospital Road, near IRS Path Lab, Pragati Nagar, Bhoop Narayan Singh Colony, Madhubani, Bihar 847211",
   phone: "+91 7250327478",
-  email: "contact@perfectus.com"
+  email: "contact@perfectus.com",
 };
 
 function reloadContactContent() {
-  const contactSection = document.getElementById('contact');
-  const pTags = contactSection.getElementsByTagName('p');
+  const contactSection = document.getElementById("contact");
+  const pTags = contactSection.getElementsByTagName("p");
 
   // Reload <p> content dynamically
   pTags[0].innerHTML = `<strong>Address:</strong> ${contactContent.address}`;
@@ -345,16 +355,14 @@ function reloadContactContent() {
 }
 
 // Detect when user reaches the bottom of the page
-window.addEventListener('scroll', function() {
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-    console.log('User reached the bottom of the page');
+window.addEventListener("scroll", function () {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    console.log("User reached the bottom of the page");
     reloadContactContent();
   }
 });
 
-
-//About us Dyanmic Effects Typing End
-
+//Contact us Dyanmic Effects Typing End
 
 // Menu Data
 
@@ -371,16 +379,16 @@ const menuData = [
         { name: "Cheese Paneer", price: 109 },
         { name: "Spicy Paneer", price: 89 },
         { name: "Aloo Tikki", price: 49 },
-        { name: "Regular Burger", price: 29 }
+        { name: "Regular Burger", price: 29 },
       ],
       NonVeg: [
         { name: "Mexican Chicken", price: 119 },
         { name: "Cheese Chicken", price: 109 },
         { name: "Spicy Chicken", price: 89 },
         { name: "Junior Egg Burger", price: 49 },
-        { name: "Crumbly Chicken Chicken", price: 119 }
-      ]
-    }
+        { name: "Crumbly Chicken Chicken", price: 119 },
+      ],
+    },
   },
 
   {
@@ -392,18 +400,17 @@ const menuData = [
         { name: "Veg Hakka Noodles", price: 109 },
         { name: "Paneer Noodles", price: 109 },
         { name: "Veg Cheese Maggi", price: 99 },
-        { name: "Veg Schezwan Noodles", price: 109 }
+        { name: "Veg Schezwan Noodles", price: 109 },
       ],
       NonVeg: [
         { name: "Chicken Noodles", price: 119 },
         { name: "Schezwan Chicken Noodles", price: 139 },
         { name: "Chicken Hakka Noodles", price: 149 },
         { name: "Egg Chicken Noodles", price: 129 },
-        { name: "Egg Maggi", price: 69 }
-      ]
-    }
+        { name: "Egg Maggi", price: 69 },
+      ],
+    },
   },
-
 
   {
     category: "🏮 China-Town",
@@ -413,7 +420,7 @@ const menuData = [
         { name: "Chilli Paneer Full", price: 159 },
         { name: "Chilli Paneer Half", price: 79 },
         { name: "Chilli Potato", price: 89 },
-        { name: "Veg Manchurian", price: 89 }
+        { name: "Veg Manchurian", price: 89 },
       ],
       NonVeg: [
         { name: "Chilli Chicken Full", price: 169 },
@@ -421,9 +428,9 @@ const menuData = [
         { name: "Chilli Lollipop Full", price: 209 },
         { name: "Chilli Lollipop Half", price: 109 },
         { name: "Schezwan Chicken", price: 139 },
-        { name: "Chicken Manchurian", price: 149 }
-      ]
-    }
+        { name: "Chicken Manchurian", price: 149 },
+      ],
+    },
   },
   {
     category: "🌯 Wraps & Rolls",
@@ -433,15 +440,15 @@ const menuData = [
         { name: "Mexican Paneer", price: 109 },
         { name: "Cheese Paneer", price: 109 },
         { name: "Spicy Paneer", price: 89 },
-        { name: "Aloo Tikki", price: 49 }
+        { name: "Aloo Tikki", price: 49 },
       ],
       NonVeg: [
         { name: "Mexican Chicken", price: 119 },
         { name: "Cheese Chicken", price: 109 },
         { name: "Spicy Chicken", price: 89 },
-        { name: "Perfect Egg", price: 59 }
-      ]
-    }
+        { name: "Perfect Egg", price: 59 },
+      ],
+    },
   },
   {
     category: "🍚 Rice Specials",
@@ -449,17 +456,15 @@ const menuData = [
     subcategories: {
       Veg: [
         { name: "Mix Veg Fried Rice", price: 139 },
-        { name: "Veg Fried Rice", price: 99 }
+        { name: "Veg Fried Rice", price: 99 },
       ],
       NonVeg: [
         { name: "Egg Fried Rice", price: 99 },
         { name: "Chicken Fried Rice", price: 139 },
-        { name: "Chicken Egg Fried Rice", price: 149 }
-      ]
-    }
+        { name: "Chicken Egg Fried Rice", price: 149 },
+      ],
+    },
   },
-
-
 
   {
     category: "🥪 Sandwiches",
@@ -467,25 +472,19 @@ const menuData = [
     subcategories: {
       Veg: [
         { name: "Potato Cheese Grilled", price: 99 },
-        { name: "Mayo Grilled Sandwiche", price: 89 }
+        { name: "Mayo Grilled Sandwiche", price: 89 },
       ],
-      NonVeg: [
-        { name: "Chicken Grilled Sandwiche", price: 119 }
-      ]
-    }
+      NonVeg: [{ name: "Chicken Grilled Sandwiche", price: 119 }],
+    },
   },
 
   {
     category: "🍲 Soups",
     colorClass: "text-warning",
     subcategories: {
-      Veg: [
-        { name: "Veg Manchow Soup", price: 69 }
-      ],
-      NonVeg: [
-        { name: "Chicken Manchow Soup", price: 99 }
-      ]
-    }
+      Veg: [{ name: "Veg Manchow Soup", price: 69 }],
+      NonVeg: [{ name: "Chicken Manchow Soup", price: 99 }],
+    },
   },
   {
     category: "☕ Hot Beverage",
@@ -493,9 +492,9 @@ const menuData = [
     subcategories: {
       Veg: [
         { name: "Chai", price: 10 },
-        { name: "Coffee", price: 49 }
-      ]
-    }
+        { name: "Coffee", price: 49 },
+      ],
+    },
   },
   {
     category: "🥟 Momos",
@@ -505,15 +504,15 @@ const menuData = [
         { name: "Steam Momo", price: 39 },
         { name: "Fried Momo", price: 49 },
         { name: "Peri Peri Momo", price: 59 },
-        { name: "Chilli Momo", price: 69 }
+        { name: "Chilli Momo", price: 69 },
       ],
       NonVeg: [
         { name: "Steam Momo", price: 59 },
         { name: "Fried Momo", price: 69 },
         { name: "Peri Peri Momo", price: 79 },
-        { name: "Chilli Momo", price: 99 }
-      ]
-    }
+        { name: "Chilli Momo", price: 99 },
+      ],
+    },
   },
   {
     category: "🍟 Fried Attack",
@@ -521,16 +520,16 @@ const menuData = [
     subcategories: {
       Veg: [
         { name: "Classic Fries", price: 89 },
-        { name: "Peri Peri Fries", price: 99 }
+        { name: "Peri Peri Fries", price: 99 },
       ],
       NonVeg: [
         { name: "Chicken Fries Half (8 PCS)", price: 99 },
         { name: "Chicken Fries Full (16 PCS)", price: 189 },
         { name: "Chicken Strips (2 PCS)", price: 89 },
         { name: "Chicken Strips (3 PCS)", price: 119 },
-        { name: "Chicken Strips (4 PCS)", price: 149 }
-      ]
-    }
+        { name: "Chicken Strips (4 PCS)", price: 149 },
+      ],
+    },
   },
 
   {
@@ -541,32 +540,33 @@ const menuData = [
         { name: "Chicken Leg Thai Half", price: 109 },
         { name: "Chicken Leg Thai Full", price: 139 },
         { name: "Chicken Breast Half", price: 109 },
-        { name: "Chicken Breast Full", price: 139 }
-      ]
-    }
+        { name: "Chicken Breast Full", price: 139 },
+      ],
+    },
   },
   {
     category: "🧑‍🤝‍🧑 Combo Offers",
     colorClass: "text-warning",
     subcategories: {
       Veg: [
-        { name: "Budy Box Veg Deal (2 Spicy Paneer Burger + 1 Classic Fries + 2 Soft Drinks 250ml each)", price: 279 }
+        {
+          name: "Budy Box Veg Deal (2 Spicy Paneer Burger + 1 Classic Fries + 2 Soft Drinks 250ml each)",
+          price: 279,
+        },
       ],
       NonVeg: [
-        { name: "Budy Box Chicken Deal (2 Spicy Chicken Burger + 1 Classic Fries + 2 Soft Drinks 250ml each)", price: 279 }
-      ]
-    }
-  }
-  
+        {
+          name: "Budy Box Chicken Deal (2 Spicy Chicken Burger + 1 Classic Fries + 2 Soft Drinks 250ml each)",
+          price: 279,
+        },
+      ],
+    },
+  },
 
   // If more menu comes then place here -------
-
 ];
 
-
-
-// here menu is ended 
-
+// here menu is ended
 
 // Function to dynamically populate the menu
 function populateMenu() {
@@ -589,7 +589,8 @@ function populateMenu() {
       subCategoryDiv.className = "mb-3";
 
       // Subcategory title
-      subCategoryDiv.innerHTML = `<h5 class="${subKey === 'Veg' ? 'text-success' : 'text-danger'}">${subKey}</h5>`;
+      subCategoryDiv.innerHTML = `<h5 class="${subKey === "Veg" ? "text-success" : "text-danger"
+        }">${subKey}</h5>`;
 
       const ul = document.createElement("ul");
       ul.className = "list-unstyled";
@@ -600,10 +601,18 @@ function populateMenu() {
         const li = document.createElement("li");
         li.innerHTML = `
           ${item.name} - ₹${item.price}
-          <span id="count-${item.name.replace(/\s+/g, "")}" class="badge bg-primary ms-2">0</span>
+          <span id="count-${item.name.replace(
+          /\s+/g,
+          ""
+        )}" class="badge bg-primary ms-2">0</span>
           <button class="btn btn-sm btn-success ms-2"
-            onclick="addToCart('${item.name}', ${item.price}, 'count-${item.name.replace(/\s+/g, "")}')">
+            onclick="addToCart('${item.name}', ${item.price
+          }, 'count-${item.name.replace(/\s+/g, "")}')">
             <i class="bi bi-plus"></i>
+          </button>
+          <button class="btn btn-sm btn-warning ms-2"
+            onclick="removeFromMenu('${item.name}', 'count-${item.name.replace(/\s+/g, "")}')">
+            <i class="bi bi-dash"></i>
           </button>
         `;
         ul.appendChild(li);
@@ -617,11 +626,26 @@ function populateMenu() {
     menuGrid.appendChild(categoryDiv);
   });
 }
+// Function to remove item from the menu
+function removeFromMenu(itemName, buttonId) {
+  const existingItem = cart.find((item) => item.name === itemName);
+
+  if (existingItem) {
+    if (existingItem.count > 1) {
+      existingItem.count--;
+    } else {
+      cart = cart.filter((item) => item.name !== itemName);
+    }
+    updateMenuCount(itemName, buttonId);
+    updateCartUI();
+    alert(`${itemName} has been removed from your cart.`);
+  } else {
+    alert(`${itemName} is not in your cart.`);
+  }
+}
 
 // Call the function to populate the menu on page load
 document.addEventListener("DOMContentLoaded", populateMenu);
-
-
 
 // Example Add to Cart Function
 function addToCart(name, price, countId) {
@@ -630,8 +654,6 @@ function addToCart(name, price, countId) {
   console.log(`Added ${name} to cart for ₹${price}`);
 }
 
-
-// Function to simulate the typing effect
 
 // My Cart Array
 // My Cart Array
@@ -648,20 +670,19 @@ function addToCart(itemName, itemPrice, buttonId) {
     cart.push({ name: itemName, price: itemPrice, count: 1 });
   }
 
+  // Update the count in the menu
+  updateMenuCount(itemName, buttonId);
 
-   // Update the count in the menu
-   updateMenuCount(itemName, buttonId);
+  updateCartUI(); // Update the cart view
+  alert(`${itemName} has been added to your cart.`);
+}
 
-   updateCartUI(); // Update the cart view
-   alert(`${itemName} has been added to your cart.`);
- }
- 
- // Update Menu Count Function
- function updateMenuCount(itemName, buttonId) {
-   const cartItem = cart.find((item) => item.name === itemName);
-   const countBadge = document.getElementById(buttonId);
-   countBadge.textContent = cartItem ? cartItem.count : 0;
- }
+// Update Menu Count Function
+function updateMenuCount(itemName, buttonId) {
+  const cartItem = cart.find((item) => item.name === itemName);
+  const countBadge = document.getElementById(buttonId);
+  countBadge.textContent = cartItem ? cartItem.count : 0;
+}
 
 // Update Cart UI for Modal and Section
 function updateCartUI() {
@@ -725,7 +746,7 @@ function decrementItem(index) {
 // Remove Item from Cart
 function removeFromCart(index) {
   const item = cart[index];
-  
+
   // Reset the menu count to 0 for the removed item
   const buttonId = `count-${item.name.replace(/\s/g, "")}`;
   const countBadge = document.getElementById(buttonId);
@@ -737,7 +758,6 @@ function removeFromCart(index) {
   cart.splice(index, 1);
   updateCartUI();
 }
-
 
 // Function to show the Delivery Details modal
 function showDeliveryModal() {
@@ -779,7 +799,9 @@ function placeOrder() {
   // Prepare the order details with numbering and line breaks
   const orderDetails = cart
     .map(
-      (item, index) => `${index + 1}. ${item.name} (x${item.count}) - ₹${item.price * item.count}`
+      (item, index) =>
+        `${index + 1}. ${item.name} (x${item.count}) - ₹${item.price * item.count
+        }`
     )
     .join("\n");
 
@@ -817,7 +839,6 @@ function placeOrder() {
   );
   myModal.hide(); // Hide the modal after the order is placed
 }
-
 
 // Scroll to My Cart Section
 document.getElementById("myCartBtn").addEventListener("click", function (e) {
