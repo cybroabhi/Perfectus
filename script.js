@@ -334,35 +334,7 @@ document.addEventListener("DOMContentLoaded", typeAboutUsEffect);
 
 //About us Dyanmic Effects Typing End
 
-//Contact us Dyanmic Effects Typing End
 
-// Define contact content to reload dynamically
-const contactContent = {
-  address:
-    "Hospital Road, near IRS Path Lab, Pragati Nagar, Bhoop Narayan Singh Colony, Madhubani, Bihar 847211",
-  phone: "+91 7250327478",
-  email: "contact@perfectus.com",
-};
-
-function reloadContactContent() {
-  const contactSection = document.getElementById("contact");
-  const pTags = contactSection.getElementsByTagName("p");
-
-  // Reload <p> content dynamically
-  pTags[0].innerHTML = `<strong>Address:</strong> ${contactContent.address}`;
-  pTags[1].innerHTML = `<strong>Phone:</strong> <a href="tel:+917250327478" class="text-decoration-none text-primary">${contactContent.phone}</a>`;
-  pTags[2].innerHTML = `<strong>Email:</strong> <a href="mailto:${contactContent.email}" class="text-decoration-none text-primary">${contactContent.email}</a>`;
-}
-
-// Detect when user reaches the bottom of the page
-window.addEventListener("scroll", function () {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    console.log("User reached the bottom of the page");
-    reloadContactContent();
-  }
-});
-
-//Contact us Dyanmic Effects Typing End
 
 // Menu Data
 
@@ -621,6 +593,14 @@ function populateMenu() {
       subCategoryDiv.appendChild(ul);
       categoryDiv.appendChild(subCategoryDiv);
     });
+
+        // Add the "Visit My Cart" button at the end of the main category
+        const visitCartBtn = document.createElement("button");
+        visitCartBtn.className = "btn btn-primary mt-3";
+        visitCartBtn.textContent = "Visit My Cart";
+        visitCartBtn.addEventListener("click", showMyCart);
+    
+        categoryDiv.appendChild(visitCartBtn);
 
     // Append main category to the menu grid
     menuGrid.appendChild(categoryDiv);
