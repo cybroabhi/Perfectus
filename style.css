@@ -405,7 +405,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 50px;
-  /* opacity: 0.5; */
+  opacity: 0.5;
   /* Start with transparency */
   transition: opacity 0.5s ease;
   /* Smooth transition for opacity */
@@ -468,4 +468,21 @@ footer {
 
 .my-4 {
   margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  footer {
+    /* height: auto; */
+    height: 55px;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  #backToTopBtn {
+    bottom: 100px; /* Adjust for smaller screens */
+  }
+
+  #bottomMessage {
+    bottom: 40px; /* Ensure it doesn't overlap with the button */
+  }
 }
