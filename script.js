@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//   footer and bitton for back to top
+//   footer and button for back to top
 
 document.addEventListener("DOMContentLoaded", () => {
   const footer = document.getElementById("footer");
@@ -67,31 +67,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const bottomMessage = document.getElementById("bottomMessage");
   let messageTimeout;
 
-  // Event listener for scrolling
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          footer.style.opacity = 1; // Fully visible
+          bottomMessage.style.display = "block"; // Show bottom message
+
+          // Clear and reset timeout for hiding the message
+          clearTimeout(messageTimeout);
+          messageTimeout = setTimeout(() => {
+            bottomMessage.style.display = "none";
+          }, 1500);
+        } else {
+          footer.style.opacity = 0.5; // Transparent
+        }
+      });
+    },
+    { threshold: 0.1 } // Trigger when 10% of the footer is visible
+  );
+
+  observer.observe(footer);
+
+  // Show "Back to Top" button on scroll
   window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY;
-    const scrollHeight = document.documentElement.scrollHeight;
-    const clientHeight = document.documentElement.clientHeight;
 
-    // Check if user reached the bottom
-    if (scrollTop + clientHeight >= scrollHeight - 10) {
-      footer.style.opacity = 1; // Make footer fully visible
-      bottomMessage.style.display = "block"; // Show bottom message
-
-      // Clear any existing timeout to reset the timer
-      clearTimeout(messageTimeout);
-
-      // Hide the bottom message after 3 seconds
-      messageTimeout = setTimeout(() => {
-        bottomMessage.style.display = "none";
-      }, 2000);
-    } else {
-      footer.style.opacity = 0.5; // Keep footer transparent
-      bottomMessage.style.display = "none"; // Hide bottom message
-      clearTimeout(messageTimeout); // Ensure timeout is cleared when not at bottom
-    }
-
-    // Show "Back to Top" button if user scrolls down
     if (scrollTop > 300) {
       backToTopBtn.style.display = "block";
     } else {
@@ -99,11 +100,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Event listener for "Back to Top" button
   backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+
 
 // Welcome Section Dynamic effect typing starts
 // Array of phrases to simulate dynamic typing effect
